@@ -1,0 +1,27 @@
+# Rust
+/target/
+**/*.rs.bk
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+secrets/
+
+# Editors and operating systems
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Benchmarks, profiles, and temporary output
+artifacts/
+profiles/
+*.profraw
+*.flamegraph.svg
+
+# Local research exports that may contain licensed or sensitive material
+docs/research/external/private/
