@@ -10,8 +10,10 @@
 - select the network stack through equivalent Hyper/Tokio and Pingora correctness spikes;
 - prove streaming, cancellation, backpressure, recovery-budget, security, and resource contracts.
 
-**Current state (2026-08-14):** repository governance and the network-neutral stream/retry domain
-core exist. HTTP behavior, market demand, compatibility, and performance remain unproven.
+**Current state (2026-08-14):** repository governance, the network-neutral stream/retry domain core,
+a strict v1 fixture reader, one fragmented SSE fixture, and a bounded single-request loopback fake
+provider exist. Production gateway behavior, cancellation/backpressure, market demand,
+compatibility, and performance remain unproven.
 
 **Exit:** R0 through R3 have named evidence. Otherwise narrow, pivot, contribute upstream, or stop.
 

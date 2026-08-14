@@ -22,11 +22,13 @@ This index separates validated decisions from hypotheses. A document marked **Dr
 | Security | `security/SECURE-DEFAULTS.md` | Proposed | Default behaviors that must hold |
 | Security | `security/SECURITY-POLICY-PROPOSAL.md` | Superseded note | Future scope behind active root `SECURITY.md` |
 | Benchmarks | `benchmarks/BENCHMARK-SPEC.md` | Proposed | Reproducible measurement and regression rules |
-| Conformance | `conformance/CONFORMANCE-PLAN.md` | Proposed | Protocol fixtures, differential tests, and matrix |
+| Conformance | `conformance/CONFORMANCE-PLAN.md` | Partially implemented | Protocol fixtures, differential tests, and matrix |
+| Conformance | `conformance/FIXTURE-SCHEMA.md` | Implemented v1 | Strict fixture format, bounds, and evolution rules |
 | Decisions | `decisions/ADR-0001-git-workflow.md` | Superseded | Historical GitHub Flow decision |
 | Decisions | `decisions/ADR-0002-network-stack-spike.md` | Proposed | Hyper/Tokio versus Pingora evaluation |
 | Decisions | `decisions/ADR-0003-network-neutral-domain-core.md` | Accepted | Shared domain contracts before network-stack selection |
 | Decisions | `decisions/ADR-0004-promotion-branches.md` | Accepted | Development, staging, and production source promotion |
+| Decisions | `decisions/ADR-0005-versioned-json-conformance-fixtures.md` | Accepted | Strict JSON fixture and isolated dependency decision |
 | Governance | `governance/BRANCHING.md` | Accepted | Branch, review, environment, and release rules |
 | Governance | `governance/LICENSING.md` | Accepted | Apache-2.0 project licensing decision |
 | Governance | `governance/RELEASES.md` | Accepted | SemVer, promotion, tag, and release checks |

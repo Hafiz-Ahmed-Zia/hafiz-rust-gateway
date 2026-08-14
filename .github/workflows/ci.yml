@@ -38,3 +38,9 @@ jobs:
 
       - name: Audit Cargo.lock
         run: cargo audit --deny warnings
+
+      - name: Install pinned dependency policy tool
+        run: cargo install cargo-deny --version 0.19.4 --locked
+
+      - name: Check dependency licenses, bans, and sources
+        run: cargo deny check licenses bans sources
