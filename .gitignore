@@ -21,6 +21,7 @@ secrets/
 artifacts/
 profiles/
 *.profraw
+*.profdata
 *.flamegraph.svg
 
 # Local research exports that may contain licensed or sensitive material

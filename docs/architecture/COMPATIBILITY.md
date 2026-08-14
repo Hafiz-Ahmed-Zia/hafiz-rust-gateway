@@ -13,14 +13,14 @@
 
 ## Endpoint scope proposal
 
-### Phase 0
+### Stage 1 technical proof
 
 - OpenAI-style `POST /v1/chat/completions`, streaming and non-streaming
 - Narrow OpenAI Responses API subset sufficient to exercise typed streaming events
 - Generic OpenAI-compatible upstream
 - Health/readiness endpoints outside the provider API namespace
 
-### Phase 1 candidate
+### Stage 2 public-alpha candidate
 
 - Expand Responses API coverage based on official event fixtures
 - Anthropic native Messages adapter if evidence supports it

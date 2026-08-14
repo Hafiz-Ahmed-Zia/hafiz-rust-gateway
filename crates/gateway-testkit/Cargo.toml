@@ -1,0 +1,16 @@
+[package]
+name = "hafiz-gateway-testkit"
+description = "Deterministic provider scenarios and fault fixtures for Hafiz Rust Gateway"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+publish = false
+
+[dependencies]
+hafiz-gateway-core = { path = "../gateway-core" }
+
+[lints]
+workspace = true

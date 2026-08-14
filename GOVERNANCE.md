@@ -11,7 +11,8 @@
 
 ## Roles
 
-- **Founder/owner:** final decision authority during foundation, including brand, license, roadmap, release, and commercial boundary.
+- **Founder/primary maintainer:** Ahmed Zia; final decision authority during foundation, including
+  brand, license, roadmap, security response, release, and commercial boundary.
 - **Maintainer:** reviews/merges changes, owns components, triages issues, and participates in releases.
 - **Contributor:** proposes issues, research, docs, tests, code, or reviews.
 - **Security responder:** privately triages vulnerabilities and coordinates advisories/releases; this role must be assigned before public production release.
@@ -26,7 +27,12 @@
 
 ## Merge policy
 
-The target remote policy is protected `main`, required CI, no force push, no direct routine commits, and at least one approving review. Security-critical/release changes should require two-person review when the maintainer group permits it.
+Protected `development`, `staging`, and `production` branches require pull requests, CI,
+conversation resolution, and no force push or deletion. Normal work targets `development`; source
+promotes one-way through `staging` to `production`. Required independent approval activates when a
+second maintainer exists. Until then, the founder may merge a passing pull request after a
+documented self-review. Security-critical and release changes should require two-person review when
+the maintainer group permits it.
 
 ## Project continuity
 
