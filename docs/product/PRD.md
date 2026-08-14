@@ -1,14 +1,18 @@
 # Hafiz Rust Gateway — Product Requirements Document
 
-**Version:** 0.1  
-**Status:** Evidence-gated draft; not approved for implementation  
-**Date:** 2026-08-13  
-**Owner:** Project founder  
-**Primary decision gates:** R0 market pain, R1 wedge, R2 trust, R3 technical proof
+| Field | Value |
+| --- | --- |
+| Version | 0.2 |
+| Status | Owner-approved foundation baseline; market and technical claims remain evidence-gated |
+| Date | 2026-08-14 |
+| Owner | Ahmed Zia, founder and primary maintainer |
+| Primary decision gates | R0 market pain, R1 wedge, R2 trust, R3 technical proof |
 
 ## 1. Executive summary
 
-Hafiz Rust Gateway is intended to be an open-source, self-hosted AI traffic gateway for teams that need a small operational footprint without giving up enterprise-grade security, streaming correctness, reliability, governance, or observability.
+Hafiz Rust Gateway is intended to be an open-source, self-hosted AI traffic gateway for teams that
+need a small operational footprint while meeting explicit security, streaming-correctness,
+reliability, governance, and observability requirements.
 
 The candidate adoption wedge is:
 
@@ -116,55 +120,47 @@ Benchmarks include configuration, hardware, workload, raw results, and failure r
 - Storing prompts/responses by default
 - Claiming FIPS, SOC 2, HIPAA, PCI DSS, FedRAMP, or regulatory compliance without the corresponding validated system and process
 
-## 8. Scope by phase
+## 8. Three delivery stages
 
-### Phase 0 — Research and technical proof
+### Stage 1 — Evidence and technical proof
 
-- Interview and evidence program
-- `hyper`/Tokio versus Pingora spike
-- OpenAI-compatible request and SSE streaming proxy spike
-- One native provider plus one generic OpenAI-compatible upstream
-- Streaming state-machine tests
-- Protocol fixture harness
-- Reproducible benchmark harness
-- Preliminary threat model and secure-default tests
+- complete primary-source market synthesis and maintainer interviews;
+- publish versioned protocol fixtures and a bounded fake HTTP provider;
+- compare `hyper`/Tokio and Pingora under identical correctness controls;
+- prove streaming commitment, cancellation, backpressure, timeout, overload, reload, and shutdown
+  behavior;
+- publish reproducible benchmark and threat-model evidence.
 
-### Phase 1 — Minimum credible gateway
+**Current implementation:** the network-neutral failure, commitment, and recovery-budget core plus
+deterministic contract scenarios. HTTP, TLS, real cancellation/backpressure, provider adapters,
+configuration, and telemetry are not implemented.
 
-- Single static or near-static binary where platform permits
-- Configuration file plus environment/file secret references
-- `check`, `run`, `version`, and `doctor` CLI commands
-- Inbound bearer-token authentication with hashed-at-rest credential records
-- Provider/model allow policies
-- Request-size, concurrency, and time limits
-- Priority and weighted routing
-- Pre-response retries and fallbacks with budgets
-- Circuit breaking and health state
-- OpenAI Chat Completions compatibility
-- OpenAI Responses compatibility subset defined by fixtures
-- Streaming SSE passthrough/translation for advertised providers
-- OpenTelemetry-compatible metrics and traces with content capture off
-- Structured audit metadata for authentication, policy, routing, and configuration decisions
-- Prometheus endpoint optional and local by default
-- Atomic configuration validation and reload
+**Exit:** market-pain, wedge, trust, and technical-proof gates have named evidence. Failure means
+narrow, pivot, contribute upstream, or stop.
 
-### Phase 2 — Enterprise pilot
+### Stage 2 — Narrow public alpha
 
-- OIDC/JWT validation with issuer/audience pinning
-- Optional mTLS and workload identity integration
-- Tenant/project identity and quotas
-- Per-team/model/provider policy bundles
-- Distributed rate-limit adapter with standalone local default
-- High-availability deployment and graceful drain
-- Configuration provenance, signatures, and rollback
-- SIEM/OTel export with bounded asynchronous delivery
-- Multi-region and data-residency policy primitives
-- Kubernetes manifests/Helm only after the standalone path is stable
-- Signed artifacts, SBOM, provenance, vulnerability reporting, and release channel policy
+- one documented OpenAI-compatible ingress subset and one generic compatible upstream;
+- a single evaluation binary with `check`, `run`, `version`, and `doctor`;
+- strict configuration, secret references, authentication, model policy, bounds, deadlines, and
+  pre-commit recovery budgets;
+- correct SSE behavior, atomic reload, metadata-only telemetry, and local diagnostics;
+- source-derived release artifacts with checksums, SBOM, provenance, and known limitations.
 
-### Phase 3 — Validated expansion only
+**Exit:** an independent evaluator completes the documented synthetic streaming journey without a
+database, broker, or hosted service. The release remains alpha and makes no enterprise claim.
 
-MCP/A2A governance, semantic caching, content guardrails, UI, hosted control plane, advanced cost routing, and policy plugins enter scope only through separate PRDs backed by customer evidence and performance/security analysis.
+### Stage 3 — Validated adoption and hardening
+
+- three design partners test the same primary use case;
+- add OIDC/workload identity, tenant policy, quotas, HA/drain, rollback, and deployment assets only
+  where pilot evidence requires them;
+- operate a repeatable conformance, vulnerability-response, release, and performance-regression
+  program;
+- define support and commercial boundaries without withholding core correctness or security.
+
+MCP/A2A governance, semantic caching, content guardrails, UI, a hosted control plane, advanced cost
+routing, and policy plugins require separate PRDs and evidence.
 
 ## 9. Functional requirements
 
@@ -241,7 +237,7 @@ MCP/A2A governance, semantic caching, content guardrails, UI, hosted control pla
 
 ## 10. Quality attributes
 
-### Performance targets for the Phase 0 reference workload
+### Performance targets for the Stage 1 reference workload
 
 These are engineering targets to validate, not current claims:
 
@@ -329,10 +325,12 @@ Fail or narrow if three credible teams will not test the same core use case.
 - OpenAI Responses coverage required for v1
 - Local identity/key store format
 - Distributed quota consistency model
-- Apache-2.0 versus dual MIT/Apache-2.0 licensing
 - Definition of enterprise support and commercial boundary
 - Whether content guardrails belong in-process, out-of-process, or outside the product
 
 ## 16. Approval record
 
-This PRD becomes implementation-authoritative only when the owner records approval after R0 and R1 evidence is attached. Until then, issues and prototypes must identify the hypothesis they test and must not turn draft requirements into irreversible compatibility promises.
+The owner approved this PRD as the implementation boundary for foundation and evidence work on
+2026-08-14. Approval does not validate the market wedge, performance targets, compatibility,
+security outcomes, or enterprise readiness. Issues and prototypes must still identify their
+requirement or research hypothesis, and unpassed gates cannot become public product claims.

@@ -1,43 +1,44 @@
 # Branching and Release Workflow
 
-**Status:** Accepted foundation decision
+**Status:** Accepted under ADR-0004
 
-## Decision
+## Branch roles
 
-Use GitHub Flow:
+| Branch | Purpose | Allowed inbound changes |
+| --- | --- | --- |
+| `development` | Default integration branch | Reviewed topic-branch pull requests |
+| `staging` | Release-candidate source | Promotion pull requests from `development` |
+| `production` | Released source and tag target | Promotion pull requests from `staging` |
+| `main` | Historical bootstrap retained for compatibility | No routine changes |
 
-- one long-lived protected branch: `main`;
-- short-lived branches such as `feat/*`, `fix/*`, `docs/*`, `research/*`, `security/*`, or the automation-specific `agent/*` convention;
-- pull requests for review and CI;
-- merge, then delete topic branches;
-- immutable version tags for releases.
+Normal work uses short-lived branches such as `feat/*`, `fix/*`, `docs/*`, `research/*`,
+`security/*`, or `agent/*`. Contributors must never implement directly on `staging` or
+`production`.
 
-Do not create long-lived `development`, `staging`, or `production` branches.
+## Promotion rules
 
-## Why
+1. Topic branch -> `development` after review and CI.
+2. `development` -> `staging` when a bounded release candidate is approved.
+3. Release defects return through a topic branch into `development`; do not patch `staging`
+   directly.
+4. `staging` -> `production` only after release checks pass.
+5. Annotated SemVer tags point to the released `production` commit.
 
-Environment branches drift, accumulate merge-only work, and do not prove what artifact is deployed. Hafiz Rust Gateway is an open-source binary/container project, not three separate codebases.
+Branches represent source state, not proof that software is deployed. When artifacts exist, build
+once from reviewed source and promote a verified digest instead of rebuilding different code for
+each environment.
 
-When deployment exists:
+## Required protections
 
-- build once from a reviewed commit/tag;
-- promote the same artifact digest through GitHub Environments named `development`, `staging`, and `production`;
-- attach approvals and deployment evidence to environments/releases;
-- never rebuild different source for each environment.
+For `development`, `staging`, and `production`:
 
-## Target protections for `main`
+- pull requests and the `Rust quality gates` check are required;
+- branches must be current with their promotion source;
+- conversations must be resolved;
+- force pushes and deletion are disabled;
+- linear/squash history is used consistently;
+- founder self-review is documented while there is one maintainer;
+- independent approval becomes required after a second maintainer joins;
+- security-critical and release changes use two-person review when the maintainer group permits.
 
-- pull request required;
-- required checks and conversation resolution;
-- at least one approval, two for release/security-critical changes when maintainers permit;
-- no force pushes or branch deletion;
-- linear/squash history policy selected consistently;
-- signed commits/tags where feasible;
-- release workflow pinned and least-privilege.
-
-## Release channels
-
-- `v0.x.y` tags during unstable development;
-- release candidates such as `v0.1.0-rc.1`;
-- stable semantic versions only after compatibility/support policy exists;
-- environment promotion uses artifact digest, not branch name.
+See `docs/governance/RELEASES.md` for version and tag rules.

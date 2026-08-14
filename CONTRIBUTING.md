@@ -12,6 +12,8 @@ Hafiz Rust Gateway is in research and foundation. Contributions that improve evi
 ## Pull requests
 
 - Use one short-lived topic branch per coherent change.
+- Open normal pull requests against `development`; only controlled promotion pull requests target
+  `staging` or `production`.
 - Link a requirement ID, issue, or research hypothesis.
 - Explain what changed, why, risks, and validation.
 - Include tests/evidence proportional to risk.
@@ -29,6 +31,24 @@ Examples:
 
 Use descriptive commits that each represent an isolated, reviewable change.
 
-## Current limitation
+Do not include internal phase/step numbering in ordinary commit subjects. Versions belong in the
+workspace manifest, changelog, annotated tags, and GitHub releases.
 
-Build and test commands will be documented when the Rust workspace is created. Until then, documentation changes must at minimum pass link/path, Markdown, and internal-consistency checks.
+## Developer Certificate of Origin
+
+Contributions use the [Developer Certificate of Origin 1.1](https://developercertificate.org/).
+Sign each commit with `git commit --signoff` to certify that you have the right to submit it under
+the repository license.
+
+## Local quality gates
+
+```bash
+cargo fmt --all --check
+cargo clippy --workspace --all-targets --all-features -- -D warnings
+cargo test --workspace --all-targets --all-features
+cargo audit --deny warnings
+```
+
+`cargo audit` is a separate RustSec tool. CI installs the repository-pinned version. The current
+workspace intentionally has no third-party runtime dependencies; every future dependency still
+requires capability, maintenance, license, supply-chain, binary-size, and performance review.

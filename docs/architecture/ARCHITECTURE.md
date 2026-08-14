@@ -1,6 +1,6 @@
 # Candidate Architecture
 
-**Status:** Proposed for technical spikes; not selected  
+**Status:** Proposed for technical spikes; not selected
 **Principle:** Keep the mandatory data plane small and make enterprise integrations optional.
 
 ## 1. System boundary
@@ -102,7 +102,8 @@ crates/
   gateway-testkit/      fake providers, fixtures, fault injection
 ```
 
-This is a modularity proposal, not permission to create every crate immediately. Phase 0 should use the smallest structure that can test boundaries without premature fragmentation.
+This is a modularity proposal, not permission to create every crate immediately. Stage 1 should use
+the smallest structure that can test boundaries without premature fragmentation.
 
 ## 5. Network-stack decision
 

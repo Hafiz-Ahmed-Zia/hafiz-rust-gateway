@@ -1,0 +1,30 @@
+name: Requirement or feature proposal
+description: Propose a bounded change backed by evidence
+title: "[proposal]: "
+labels: [proposal, needs-evidence]
+body:
+  - type: input
+    id: requirement
+    attributes:
+      label: Requirement ID or research-spike label
+      placeholder: STR-004 or research-spike
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and affected user
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and alternatives considered
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Smallest validation and kill criterion
+    validations:
+      required: true
