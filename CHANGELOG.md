@@ -6,6 +6,15 @@ so.
 
 ## Unreleased
 
+### Added
+
+- Strict v1 JSON conformance fixtures with pre-parse and field-level bounds, executable outcome
+  validation, and deterministic failure semantics.
+- First fragmented SSE fixture and a credential-free, single-request loopback fake HTTP provider
+  test.
+- CLI fixture validation, dependency license/source policy, and a clearer first-screen project
+  explanation in the README.
+
 ### Changed
 
 - Clarified that squash-based promotion verifies an identical source-tree SHA rather than an

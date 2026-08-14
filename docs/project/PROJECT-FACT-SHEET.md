@@ -6,7 +6,7 @@
 | License | Apache-2.0 |
 | Repository | <https://github.com/Hafiz-Ahmed-Zia/hafiz-rust-gateway> |
 | Maintainer | Ahmed Zia (founder and primary maintainer) |
-| Status | Pre-alpha, source-only foundation |
+| Status | Pre-alpha source and local conformance-test foundation |
 
 ## Problem and approach
 
@@ -20,13 +20,17 @@ public fixtures and reproducible evidence rather than broad claims.
 - a compiling three-crate Rust workspace;
 - executable streaming-commitment, failure-classification, and recovery-budget contracts;
 - deterministic clean, pre-commit-disconnect, and partial-stream scenarios;
-- CI formatting, strict Clippy, tests, RustSec audit, Dependabot, and secret scanning;
+- a strict versioned fixture reader with explicit input bounds and declared-outcome verification;
+- one synthetic fragmented SSE fixture replayed through a bounded loopback HTTP provider test;
+- CI formatting, strict Clippy, tests, RustSec audit, dependency license/source policy, Dependabot,
+  and secret scanning;
 - public license, governance, contribution, support, security, threat-model, roadmap, and research
   records;
 - private GitHub vulnerability reporting and protected promotion branches.
 
-There is no HTTP listener, TLS, provider adapter, supported production release, benchmark result,
-or verified user adoption yet.
+There is no production gateway listener, TLS, provider adapter, supported production release,
+benchmark result, or verified user adoption yet. The only HTTP listener is a loopback-only,
+single-request conformance test provider.
 
 ## Why the work may matter
 

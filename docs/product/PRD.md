@@ -131,9 +131,10 @@ Benchmarks include configuration, hardware, workload, raw results, and failure r
   behavior;
 - publish reproducible benchmark and threat-model evidence.
 
-**Current implementation:** the network-neutral failure, commitment, and recovery-budget core plus
-deterministic contract scenarios. HTTP, TLS, real cancellation/backpressure, provider adapters,
-configuration, and telemetry are not implemented.
+**Current implementation:** the network-neutral failure, commitment, and recovery-budget core,
+deterministic contract scenarios, a strict v1 conformance-fixture reader, and a bounded loopback fake
+HTTP provider for one synthetic fragmented SSE exchange. The production gateway listener, TLS, real
+cancellation/backpressure, provider adapters, configuration, and telemetry are not implemented.
 
 **Exit:** market-pain, wedge, trust, and technical-proof gates have named evidence. Failure means
 narrow, pivot, contribute upstream, or stop.

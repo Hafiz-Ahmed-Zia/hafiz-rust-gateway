@@ -1,6 +1,10 @@
 # Conformance Plan
 
-**Status:** Proposed
+**Status:** Partially implemented
+
+The strict v1 fixture reader, first fragmented SSE fixture, executable expected-outcome check, and
+single-request loopback fake HTTP provider are implemented. Cancellation, slow-consumer,
+backpressure, malformed-event, differential gateway, SDK, and live-provider layers remain pending.
 
 ## Objectives
 
@@ -14,6 +18,8 @@
 ### Offline golden fixtures
 
 Versioned sanitized requests, responses, SSE event sequences, errors, headers, and usage objects. Fixtures must contain no production customer data.
+
+The v1 format and hard bounds are defined in [`FIXTURE-SCHEMA.md`](FIXTURE-SCHEMA.md).
 
 ### Differential fake-provider tests
 

@@ -1,4 +1,4 @@
-//! Deterministic, network-free provider scenarios for contract tests and CLI demonstrations.
+//! Deterministic provider scenarios, fixture validation, and a bounded loopback HTTP test server.
 
 #![forbid(unsafe_code)]
 
@@ -7,6 +7,9 @@ use std::{error::Error, fmt};
 use hafiz_gateway_core::{
     FailureClass, StreamSignal, StreamState, TerminalReason, TransitionError,
 };
+
+pub mod conformance;
+pub mod fake_http;
 
 /// One scripted behavior from a deterministic upstream provider.
 #[derive(Clone, Debug, Eq, PartialEq)]

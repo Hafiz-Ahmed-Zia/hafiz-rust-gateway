@@ -6,12 +6,12 @@
 | --- | --- | --- | --- | --- | --- |
 | MKT-001 | A specific segment reports repeated, expensive AI-gateway pain | Must | Interviews and evidence ledger | R0 | Unvalidated |
 | MKT-002 | Three design partners prefer the same wedge over incumbent extension | Must | Written design-partner commitments | R1/R4 | Unvalidated |
-| API-001 | Advertised OpenAI-compatible requests conform to published fixtures | Must | Differential conformance suite | R3 | Unimplemented |
+| API-001 | Advertised OpenAI-compatible requests conform to published fixtures | Must | Differential conformance suite | R3 | Strict v1 schema and first synthetic fixture implemented; gateway differential proof pending |
 | API-002 | Compatibility tier and deviations are published per endpoint/provider | Must | Matrix review and CI | R3 | Unimplemented |
-| STR-001 | Streaming event order and terminal semantics are preserved | Must | State-machine and differential tests | R3 | Domain state machine implemented; network proof pending |
+| STR-001 | Streaming event order and terminal semantics are preserved | Must | State-machine and differential tests | R3 | Domain state machine plus fragmented loopback provider fixture implemented; gateway proof pending |
 | STR-002 | Client cancellation propagates upstream promptly | Must | Integration/chaos test | R3 | Unimplemented |
 | STR-003 | Stream buffers and queues are bounded under slow clients | Must | Backpressure load test | R3 | Unimplemented |
-| STR-004 | No silent retry/fallback occurs after visible output | Must | Fault-injection test | R3 | Domain guard and deterministic scenario implemented; network proof pending |
+| STR-004 | No silent retry/fallback occurs after visible output | Must | Fault-injection test | R3 | Domain guard, deterministic scenario, and post-commit fixture test implemented; gateway proof pending |
 | SEC-001 | Invalid or ambiguous security configuration fails closed | Must | Negative configuration suite | R2 | Unimplemented |
 | SEC-002 | Secrets and content are absent from default logs/traces/errors | Must | Canary-secret and snapshot tests | R2 | Unimplemented |
 | SEC-003 | TLS verification is on and insecure mode is explicit/dev-only | Must | Configuration and integration tests | R2 | Unimplemented |

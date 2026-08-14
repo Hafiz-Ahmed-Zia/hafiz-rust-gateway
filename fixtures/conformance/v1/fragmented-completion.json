@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "name": "fragmented_sse_completion",
+  "request": {
+    "method": "POST",
+    "path": "/v1/responses",
+    "headers": [
+      {
+        "name": "content-type",
+        "value": "application/json"
+      }
+    ],
+    "body": "{\"model\":\"fixture-model\",\"input\":\"synthetic\",\"stream\":true}"
+  },
+  "response": {
+    "status": 200,
+    "headers": [
+      {
+        "name": "content-type",
+        "value": "text/event-stream"
+      },
+      {
+        "name": "cache-control",
+        "value": "no-cache"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "kind": "response_headers"
+    },
+    {
+      "kind": "fragment",
+      "data": "data: {\"type\":\"response.output_",
+      "event_end": false
+    },
+    {
+      "kind": "delay",
+      "milliseconds": 1
+    },
+    {
+      "kind": "fragment",
+      "data": "text.delta\",\"delta\":\"hel",
+      "event_end": false
+    },
+    {
+      "kind": "fragment",
+      "data": "lo\"}\n\n",
+      "event_end": true
+    },
+    {
+      "kind": "complete"
+    }
+  ],
+  "expected": {
+    "terminal_reason": "completed",
+    "committed": true,
+    "forwarded_events": 1,
+    "partial": false,
+    "transparent_recovery_candidate": false
+  }
+}
