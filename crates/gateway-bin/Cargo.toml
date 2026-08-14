@@ -1,0 +1,21 @@
+[package]
+name = "hafiz-gateway"
+description = "CLI and future data-plane process for Hafiz Rust Gateway"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+publish = false
+
+[[bin]]
+name = "hafiz-gateway"
+path = "src/main.rs"
+
+[dependencies]
+hafiz-gateway-core = { path = "../gateway-core" }
+hafiz-gateway-testkit = { path = "../gateway-testkit" }
+
+[lints]
+workspace = true

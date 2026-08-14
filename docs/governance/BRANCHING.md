@@ -29,7 +29,9 @@ When deployment exists:
 
 - pull request required;
 - required checks and conversation resolution;
-- at least one approval, two for release/security-critical changes when maintainers permit;
+- independent approval once a second maintainer exists; until then, passing CI plus documented
+  founder self-review;
+- two approvals for release/security-critical changes when the maintainer group permits;
 - no force pushes or branch deletion;
 - linear/squash history policy selected consistently;
 - signed commits/tags where feasible;

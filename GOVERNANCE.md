@@ -26,7 +26,10 @@
 
 ## Merge policy
 
-The target remote policy is protected `main`, required CI, no force push, no direct routine commits, and at least one approving review. Security-critical/release changes should require two-person review when the maintainer group permits it.
+The target remote policy is protected `main`, pull-request changes, required CI, no force push, and
+no branch deletion. Required independent approval activates when a second maintainer exists. Until
+then, the founder may merge a passing pull request after a documented self-review. Security-critical
+and release changes should require two-person review when the maintainer group permits it.
 
 ## Project continuity
 

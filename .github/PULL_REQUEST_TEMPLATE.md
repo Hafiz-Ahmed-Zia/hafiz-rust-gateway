@@ -1,25 +1,20 @@
-## What changed
+## Requirement and scope
 
+- Requirement ID or research-spike label:
+- User-visible behavior changed:
+- Explicit non-goals:
 
-## Why
+## Risk review
 
+- Security/privacy impact:
+- Retry/streaming/failure-semantics impact:
+- Dependency/license/supply-chain impact:
+- Performance/resource impact:
 
-## Requirement, issue, or research hypothesis
+## Verification
 
-
-## Risk and security/privacy impact
-
-
-## Validation
-
-
-## Documentation/conformance changes
-
-
-## Checklist
-
-- [ ] The change is narrow and does not include unrelated work.
-- [ ] Security, streaming, failure, and compatibility semantics are explicit.
-- [ ] Tests/evidence are proportional to risk.
-- [ ] No secrets, production content, or customer data are included.
-- [ ] User-visible claims are supported by named evidence.
+- [ ] Formatting and Clippy pass
+- [ ] Relevant tests pass
+- [ ] Negative/fault cases are covered where required
+- [ ] Documentation and compatibility status are updated
+- [ ] No secrets, production content, or customer data are included

@@ -32,6 +32,10 @@
 - reproducible equivalent-control benchmarks;
 - targeted fuzz/fault tests.
 
+**Current slice (2026-08-14):** the network-neutral stream/retry domain core and deterministic
+scenario testkit are implemented. HTTP behavior, real cancellation/backpressure, configuration,
+provider conformance, and performance remain unproven.
+
 **Exit:** R2 and R3 pass.
 
 ## F3 — Minimum credible open-source release

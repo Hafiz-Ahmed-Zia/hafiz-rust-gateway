@@ -29,6 +29,21 @@ Examples:
 
 Use descriptive commits that each represent an isolated, reviewable change.
 
-## Current limitation
+## Developer Certificate of Origin
 
-Build and test commands will be documented when the Rust workspace is created. Until then, documentation changes must at minimum pass link/path, Markdown, and internal-consistency checks.
+Contributions use the [Developer Certificate of Origin 1.1](https://developercertificate.org/).
+Sign each commit with `git commit --signoff` to certify that you have the right to submit it under
+the repository license.
+
+## Local quality gates
+
+```bash
+cargo fmt --all --check
+cargo clippy --workspace --all-targets --all-features -- -D warnings
+cargo test --workspace --all-targets --all-features
+cargo audit --deny warnings
+```
+
+`cargo audit` is a separate RustSec tool. CI installs the repository-pinned version. The current
+workspace intentionally has no third-party runtime dependencies; every future dependency still
+requires capability, maintenance, license, supply-chain, binary-size, and performance review.

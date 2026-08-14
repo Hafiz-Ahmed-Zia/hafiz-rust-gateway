@@ -2,7 +2,7 @@
 
 Hafiz Rust Gateway is a research-led open-source project for a secure-by-default, low-latency, self-hosted gateway for enterprise AI and LLM traffic.
 
-> **Status: discovery and foundation.** The product thesis, architecture, performance targets, and licensing recommendation are drafts until their evidence gates are passed. There is no production release yet.
+> **Status: pre-alpha foundation.** The product thesis, architecture, and performance targets remain evidence-gated. A network-neutral Rust contract skeleton now exists, but there is no HTTP gateway or production release yet.
 
 ## Candidate product promise
 
@@ -30,6 +30,7 @@ This is a hypothesis to validate, not a marketing claim. The project will not tr
 - [`docs/security/THREAT-MODEL.md`](docs/security/THREAT-MODEL.md) — preliminary threat model
 - [`docs/benchmarks/BENCHMARK-SPEC.md`](docs/benchmarks/BENCHMARK-SPEC.md) — benchmark contract
 - [`docs/roadmap/FOUNDATION-ROADMAP.md`](docs/roadmap/FOUNDATION-ROADMAP.md) — evidence-gated delivery sequence
+- [`docs/roadmap/GITHUB-ISSUE-BACKLOG.md`](docs/roadmap/GITHUB-ISSUE-BACKLOG.md) — milestone and issue seed backlog
 - [`docs/README.md`](docs/README.md) — complete documentation index
 
 ## Current decisions
@@ -39,15 +40,35 @@ This is a hypothesis to validate, not a marketing claim. The project will not tr
 - The first technical spike will compare a `hyper`/Tokio data plane with a Pingora-based implementation before the networking foundation is selected.
 - The first release will be deliberately narrow. MCP, A2A, semantic caching, a dashboard, prompt management, and an evaluation platform are not day-one scope.
 
+## Implemented foundation
+
+- Cargo workspace with a network-neutral core, deterministic provider testkit, and research CLI.
+- Executable failure taxonomy, streaming commitment state machine, and bounded retry/fallback policy.
+- Built-in simulations for clean completion, pre-commit disconnect, and partial-stream disconnect.
+- Apache-2.0 license, root security policy, contribution/governance files, and GitHub-ready CI/templates.
+
+This foundation implements domain contracts only. It does **not** yet implement HTTP, TLS, provider
+adapters, authentication, configuration loading, backpressure, real cancellation, or telemetry.
+
+### Local verification
+
+```bash
+cargo fmt --all --check
+cargo clippy --workspace --all-targets --all-features -- -D warnings
+cargo test --workspace --all-targets --all-features
+cargo run -p hafiz-gateway -- simulate partial-disconnect
+```
+
 ## What happens next
 
-1. Run the Pro-model research prompt without shortening it.
-2. Add the complete returned report and sources under `docs/research/external/`.
-3. Compare the report with the independent baseline, resolve conflicting claims, and update the claim ledger.
-4. Interview target platform, security, SRE, and FinOps teams.
-5. Pass the market-pain and wedge gates before treating the PRD as approved.
-6. Build a thin conformance and streaming spike before expanding product scope.
+1. Preserve complete external research reports and cited sources under `docs/research/external/`.
+2. Resolve report conflicts against primary evidence and update the claim ledger.
+3. Build the bounded fake HTTP provider and first versioned conformance fixtures.
+4. Run the equivalent `hyper`/Tokio and Pingora correctness spikes required by ADR-0002.
+5. Interview target platform, security, SRE, and FinOps teams while technical proof proceeds.
+6. Pass the market-pain, wedge, trust, and technical gates before expanding provider scope.
 
 ## Open-source status
 
-The repository foundation is being prepared for public open-source development. The recommended license is Apache-2.0 because infrastructure adopters benefit from an explicit patent grant, but the owner must approve the final license before a public release.
+Source code and documentation are licensed under Apache-2.0. The Hafiz Rust Gateway name and other
+project branding are not granted as trademarks by that source-code license.

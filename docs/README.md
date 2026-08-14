@@ -12,20 +12,24 @@ This index separates validated decisions from hypotheses. A document marked **Dr
 | Research | `research/04-pro-research-comparison-template.md` | Ready | Claim-by-claim synthesis method |
 | Research | `research/05-claim-ledger.md` | Active | Evidence, confidence, and unresolved claims |
 | Research | `research/06-design-partner-interview-guide.md` | Ready | Non-leading customer discovery interview |
+| Research | `research/external/README.md` | Active archive | Immutable external reports and integrity records |
 | Architecture | `architecture/ARCHITECTURE.md` | Proposed | Data-plane/control-plane boundaries and options |
 | Architecture | `architecture/STREAMING-CONTRACT.md` | Proposed | Streaming state machine and failure behavior |
 | Architecture | `architecture/RELIABILITY-CONTRACT.md` | Proposed | Timeouts, retries, fallback, overload, and shutdown |
 | Architecture | `architecture/COMPATIBILITY.md` | Proposed | Protocol and provider compatibility tiers |
 | Security | `security/THREAT-MODEL.md` | Draft | Assets, adversaries, boundaries, and invariants |
 | Security | `security/SECURE-DEFAULTS.md` | Proposed | Default behaviors that must hold |
-| Security | `security/SECURITY-POLICY-PROPOSAL.md` | Awaiting approval | Proposed future root security policy |
+| Security | `security/SECURITY-POLICY-PROPOSAL.md` | Superseded note | Future scope behind active root `SECURITY.md` |
 | Benchmarks | `benchmarks/BENCHMARK-SPEC.md` | Proposed | Reproducible measurement and regression rules |
 | Conformance | `conformance/CONFORMANCE-PLAN.md` | Proposed | Protocol fixtures, differential tests, and matrix |
 | Decisions | `decisions/ADR-0001-git-workflow.md` | Accepted | GitHub Flow and branch policy |
 | Decisions | `decisions/ADR-0002-network-stack-spike.md` | Proposed | Hyper/Tokio versus Pingora evaluation |
+| Decisions | `decisions/ADR-0003-network-neutral-domain-core.md` | Accepted | Shared domain contracts before network-stack selection |
 | Governance | `governance/BRANCHING.md` | Accepted | Branch, review, environment, and release rules |
-| Governance | `governance/LICENSING.md` | Proposed | Apache-2.0 recommendation and decision gate |
+| Governance | `governance/LICENSING.md` | Accepted | Apache-2.0 project licensing decision |
 | Roadmap | `roadmap/FOUNDATION-ROADMAP.md` | Active | Research-to-production gates |
+| Roadmap | `roadmap/SIX-MONTH-PLAN.md` | Active | Evidence-gated first six-month delivery plan |
+| Roadmap | `roadmap/GITHUB-ISSUE-BACKLOG.md` | Ready | Requirement-linked milestones and seed issues |
 
 ## Decision authority
 
