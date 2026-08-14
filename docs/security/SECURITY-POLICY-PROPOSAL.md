@@ -1,12 +1,15 @@
 # Proposed Repository Security Policy
 
-**Status:** Proposal only. This file is not the active root `SECURITY.md`. Owner approval is required before activation.
+**Status:** Superseded as policy by the root `SECURITY.md` on 2026-08-14; retained as a future-scope
+design note. The root file is authoritative.
 
 ## System and Scope
 
 Hafiz Rust Gateway is intended to be a self-hosted AI/LLM traffic data plane. The future security policy should cover runtime gateway code, provider adapters, authentication and policy modules, configuration/reload, telemetry/audit, build/release automation, official containers/binaries, and first-party deployment assets.
 
-The project is pre-implementation. Current documents describe intended properties and must not be treated as evidence that controls exist.
+The project has a network-neutral domain skeleton but no network runtime or supported release.
+Current documents describe intended properties and must not be treated as evidence that controls
+exist beyond their named executable tests.
 
 ## Threat Model and Trust Boundaries
 
@@ -32,7 +35,8 @@ Documentation gaps are security findings when they create an unsafe default or c
 
 ## Out of Scope, Exclusions, and Accepted Risk
 
-No owner-approved exclusions or accepted security risks exist yet.
+The active root policy defines current reportability and exclusions. This design note cannot expand
+or narrow that policy.
 
 The following are not automatically product vulnerabilities unless gateway behavior materially causes or worsens them:
 
@@ -41,7 +45,7 @@ The following are not automatically product vulnerabilities unless gateway behav
 - unsupported community forks or modified artifacts;
 - attacks requiring a deliberately disabled security control, when the override is explicit, development-only, and documented.
 
-These statements require owner confirmation before they become active scan/reporting policy.
+These statements are design guidance only unless incorporated into the root policy.
 
 ## Known Limitations and Compensating Controls
 
@@ -52,13 +56,15 @@ These statements require owner confirmation before they become active scan/repor
 
 ## Vulnerability Reporting
 
-Before public release, the owner must establish a monitored private reporting channel, response targets, supported-version policy, coordinated-disclosure process, and advisory/CVE workflow. Public issues must not be the preferred channel for undisclosed vulnerabilities.
+GitHub private vulnerability reporting is enabled. Before a supported release, establish a
+monitored response role, supported-version policy, coordinated-disclosure process, and advisory/CVE
+workflow. Public issues must never be the preferred channel for undisclosed vulnerabilities.
 
-## Approval checklist
+## Remaining follow-up checklist
 
 - Confirm internet-facing and internal-only deployment surfaces.
 - Confirm attacker-controlled versus operator-controlled upstream configuration.
 - Confirm tenant and data-sensitivity assumptions.
 - Confirm severity examples and any exclusions.
 - Establish the private security contact.
-- Move the approved text to root `SECURITY.md` and verify the resolved policy chain.
+- Re-verify private reporting and the resolved policy chain at each supported release.

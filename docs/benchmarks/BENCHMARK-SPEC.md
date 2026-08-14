@@ -1,6 +1,6 @@
 # Benchmark Specification
 
-**Status:** Proposed  
+**Status:** Proposed
 **Goal:** Measure the cost of gateway guarantees, not produce a flattering requests-per-second number.
 
 ## 1. Reporting rules
@@ -77,7 +77,7 @@ No comparison is valid when competitors run without equivalent TLS, authenticati
 - 30-60 minute soak;
 - memory growth, task/FD leaks, connection churn, and cancellation cleanup.
 
-## 4. Phase 0 engineering targets
+## 4. Stage 1 engineering targets
 
 Targets are provisional and pass only with required controls enabled:
 

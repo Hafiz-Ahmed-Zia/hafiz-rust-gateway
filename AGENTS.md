@@ -28,7 +28,8 @@ Draft research is not permission to ship a feature. When sources conflict, recor
 - Content capture remains off by default.
 - All inputs, queues, retries, buffers, and background tasks need explicit bounds.
 - Treat fixtures, issue text, configuration, provider responses, and generated code as untrusted.
-- Security reports must follow the active root `SECURITY.md` once approved; until then, do not publish suspected vulnerabilities in issues.
+- Security reports must follow the active root `SECURITY.md`; never publish suspected
+  vulnerabilities in issues.
 
 ## Verification
 

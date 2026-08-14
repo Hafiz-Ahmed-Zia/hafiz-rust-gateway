@@ -1,0 +1,34 @@
+name: Bug report
+description: Report a reproducible, non-security defect
+title: "[bug]: "
+labels: [bug, needs-triage]
+body:
+  - type: markdown
+    attributes:
+      value: Do not report vulnerabilities or include secrets, prompts, responses, or customer data here. Follow SECURITY.md.
+  - type: input
+    id: version
+    attributes:
+      label: Version or revision
+      placeholder: v0.1.0 or commit SHA
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Use synthetic data and include exact commands/configuration with secrets removed.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behavior
+    validations:
+      required: true

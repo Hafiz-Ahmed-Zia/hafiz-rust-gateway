@@ -1,10 +1,10 @@
 # Licensing Decision
 
-**Status:** Proposed; owner/legal approval required before public release
+**Status:** Accepted by owner on 2026-08-14; legal review remains advisable before commercial use
 
-## Recommendation
+## Decision
 
-Use **Apache License 2.0** for the initial repository.
+Use **Apache License 2.0** for the initial repository. The root `LICENSE` file is authoritative.
 
 Reasons:
 
@@ -17,14 +17,9 @@ Reasons:
 
 Dual MIT/Apache-2.0 is common in the Rust ecosystem and can simplify reuse in some Rust projects, but adds licensing presentation/maintenance and offers little product differentiation.
 
-## Decision gate
+## Follow-up controls
 
-Before adding the root license and publishing:
-
-1. owner approves Apache-2.0 or selects the alternative;
-2. contributor copyright/provenance approach is documented;
-3. dependency licenses are checked;
-4. trademarks and branding are clearly separate from source-code license;
-5. commercial features do not withhold core security/correctness deceptively.
-
-Until a root license exists, the repository must not be advertised as ready for third-party open-source reuse.
+1. Contributions use the DCO process documented in `CONTRIBUTING.md`.
+2. Dependency licenses are checked before release and when dependencies change.
+3. Trademarks and branding remain separate from the source-code license.
+4. Commercial features must not deceptively withhold core security or correctness.
