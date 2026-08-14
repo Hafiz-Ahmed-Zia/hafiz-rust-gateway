@@ -6,6 +6,11 @@ so.
 
 ## Unreleased
 
+### Changed
+
+- Clarified that squash-based promotion verifies an identical source-tree SHA rather than an
+  identical branch commit SHA.
+
 ## [0.1.0-alpha.1] - 2026-08-14
 
 ### Added

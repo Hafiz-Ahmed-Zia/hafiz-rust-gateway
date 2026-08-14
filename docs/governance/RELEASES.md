@@ -22,7 +22,8 @@ No tag or GitHub release means a branch snapshot, not an official release.
 1. Topic branches merge into `development` after review and CI.
 2. A promotion pull request moves an approved commit from `development` to `staging`.
 3. Release checks run against `staging`; fixes return through `development`.
-4. The same reviewed source commit is promoted to `production`.
+4. The reviewed source tree is promoted to `production`. When squash merges create branch-specific
+   commit SHAs, record and verify the identical Git tree SHA across promotion branches.
 5. The maintainer updates the changelog, verifies the workspace version, creates an annotated tag,
    pushes the tag, and publishes matching release notes.
 
@@ -35,6 +36,8 @@ must reuse a verified artifact digest or produce traceable source-equivalent art
 - repository and raw-research integrity checks pass;
 - no unresolved critical security finding in the released scope;
 - changelog and known limitations match executable behavior;
+- promotion branches have an identical source-tree SHA, or every intentional difference is
+  reviewed and documented;
 - compatibility/performance claims link to versioned evidence;
 - source tag and release notes clearly state whether artifacts are evaluation-only.
 
