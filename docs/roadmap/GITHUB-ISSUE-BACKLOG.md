@@ -1,10 +1,10 @@
 # Initial GitHub Issue Backlog
 
-**Status:** Ready to seed after the GitHub remote exists
+**Status:** Milestone 1 issues 1-3 seeded; later work remains gate-controlled
 **Scope rule:** Every issue must stay within its milestone and reference the named requirement or
 research-spike label. Passing an issue does not by itself authorize a product claim.
 
-## Milestone 1 — Foundation and evidence
+## Milestone 1 — Evidence and technical proof
 
 1. **Synthesize preserved external research into the claim ledger**
    Labels: `research`, `evidence` · Requirements: MKT-001, MKT-002
@@ -19,7 +19,7 @@ research-spike label. Passing an issue does not by itself authorize a product cl
    Accept when tests can control fragmentation, delay, malformed events, pre-commit disconnects,
    post-commit disconnects, and hard size/event limits without external services.
 
-## Milestone 2 — Network-stack decision
+### Network-stack decision
 
 4. **Run the equivalent Hyper/Tokio data-plane spike**
    Labels: `research-spike`, `networking` · Requirements: ADR-0002, STR-001 through STR-004
@@ -33,7 +33,9 @@ research-spike label. Passing an issue does not by itself authorize a product cl
    Accept when correctness failures are resolved first and an accepted ADR records the comparable
    results, tradeoffs, rejected option, and rollback implications.
 
-## Milestone 3 — Narrow usable data plane
+## Milestone 2 — Narrow public alpha
+
+### Usable data plane
 
 7. **Implement one bounded OpenAI-compatible ingress subset**
    Labels: `feature`, `protocol` · Requirements: API-001, API-002, SEC-005
@@ -48,7 +50,7 @@ research-spike label. Passing an issue does not by itself authorize a product cl
    Accept when integration and overload tests prove all relevant queues/buffers are bounded and no
    transparent recovery happens after commitment.
 
-## Milestone 4 — Security and operations
+### Security and operations
 
 10. **Harden target validation, headers, and content-safe telemetry**
     Labels: `security`, `observability` · Requirements: SEC-002, SEC-004, OBS-001
@@ -62,7 +64,7 @@ research-spike label. Passing an issue does not by itself authorize a product cl
     Accept when deterministic regression fixtures exist for every validated failure and scheduled
     jobs retain useful bounded artifacts.
 
-## Milestone 5 — Public alpha evidence
+### Release evidence
 
 13. **Publish compatibility matrix and reproducible benchmark evidence**
     Labels: `documentation`, `performance` · Requirements: API-002, PER-001, PER-002
@@ -76,8 +78,13 @@ research-spike label. Passing an issue does not by itself authorize a product cl
     Accept when the named clean-environment study passes and the release documentation makes no
     universal compatibility or enterprise-readiness claim.
 
+## Milestone 3 — Validated adoption and hardening
+
+Pilot identity, quota, HA, deployment, support, and commercial-boundary issues are created only
+after three credible design partners validate the same primary workflow.
+
 ## Remote seeding rule
 
-Create milestones and labels first, then create these issues in order. Do not bulk-create later
-milestones until the preceding gate remains plausible; close or rewrite obsolete issues after a
+Create labels and issues only when their stage is authorized. Do not bulk-create Stage 2 or Stage 3
+work until the preceding gate remains plausible; close or rewrite obsolete issues after a
 documented pivot instead of leaving misleading scope open.

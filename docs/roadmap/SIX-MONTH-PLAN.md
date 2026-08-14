@@ -1,6 +1,7 @@
 # Six-Month Open-Source Plan
 
 **Status:** Evidence-gated working plan
+
 **Start condition:** Broad Hafiz direction confirmed; market and technical gates still apply
 
 ## Month 1 — Executable contracts and repository quality

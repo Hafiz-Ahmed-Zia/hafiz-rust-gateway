@@ -1,6 +1,6 @@
 # Requirements Register
 
-**Status:** Draft companion to PRD v0.1
+**Status:** Approved foundation companion to PRD v0.2; validation states remain authoritative
 
 | ID | Requirement | Priority | Validation | Gate | Status |
 | --- | --- | --- | --- | --- | --- |
@@ -27,7 +27,7 @@
 | PER-001 | Equivalent-control added latency meets approved benchmark budget | Must | Reproducible benchmark | R3 | Unvalidated |
 | PER-002 | Idle and per-stream memory meet approved benchmark budget | Must | Reproducible profile | R3 | Unvalidated |
 | SUP-001 | Released artifacts carry SBOM, provenance, checksums, and signatures | Must for public production | Release verification | R6 | Unimplemented |
-| GOV-001 | `main` is protected and changes flow through reviewed topic branches | Must after remote creation | GitHub rules audit | Foundation | Locally documented |
+| GOV-001 | Protected `development` -> `staging` -> `production` promotion and reviewed topic branches are enforced | Must | GitHub rules audit | Foundation | Enforced and verified on all three promotion branches |
 
 ## Priority language
 

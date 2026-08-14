@@ -4,7 +4,7 @@ version = 4
 
 [[package]]
 name = "hafiz-gateway"
-version = "0.1.0"
+version = "0.1.0-alpha.1"
 dependencies = [
  "hafiz-gateway-core",
  "hafiz-gateway-testkit",
@@ -12,11 +12,11 @@ dependencies = [
 
 [[package]]
 name = "hafiz-gateway-core"
-version = "0.1.0"
+version = "0.1.0-alpha.1"
 
 [[package]]
 name = "hafiz-gateway-testkit"
-version = "0.1.0"
+version = "0.1.0-alpha.1"
 dependencies = [
  "hafiz-gateway-core",
 ]

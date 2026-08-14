@@ -1,5 +1,6 @@
 ## Requirement and scope
 
+- Target branch (`development`, or an authorized promotion):
 - Requirement ID or research-spike label:
 - User-visible behavior changed:
 - Explicit non-goals:
@@ -18,3 +19,4 @@
 - [ ] Negative/fault cases are covered where required
 - [ ] Documentation and compatibility status are updated
 - [ ] No secrets, production content, or customer data are included
+- [ ] Version/changelog changes are included only when this is an authorized release change

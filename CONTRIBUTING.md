@@ -12,6 +12,8 @@ Hafiz Rust Gateway is in research and foundation. Contributions that improve evi
 ## Pull requests
 
 - Use one short-lived topic branch per coherent change.
+- Open normal pull requests against `development`; only controlled promotion pull requests target
+  `staging` or `production`.
 - Link a requirement ID, issue, or research hypothesis.
 - Explain what changed, why, risks, and validation.
 - Include tests/evidence proportional to risk.
@@ -28,6 +30,9 @@ Examples:
 - `research/pingora-hyper-spike`
 
 Use descriptive commits that each represent an isolated, reviewable change.
+
+Do not include internal phase/step numbering in ordinary commit subjects. Versions belong in the
+workspace manifest, changelog, annotated tags, and GitHub releases.
 
 ## Developer Certificate of Origin
 

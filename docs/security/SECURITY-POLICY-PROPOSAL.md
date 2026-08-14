@@ -56,10 +56,9 @@ These statements are design guidance only unless incorporated into the root poli
 
 ## Vulnerability Reporting
 
-Before public exposure, enable GitHub private vulnerability reporting. Before a supported release,
-establish a monitored response role, supported-version policy, coordinated-disclosure process, and
-advisory/CVE workflow. Public issues must never be the preferred channel for undisclosed
-vulnerabilities.
+GitHub private vulnerability reporting is enabled. Before a supported release, establish a
+monitored response role, supported-version policy, coordinated-disclosure process, and advisory/CVE
+workflow. Public issues must never be the preferred channel for undisclosed vulnerabilities.
 
 ## Remaining follow-up checklist
 
@@ -68,4 +67,4 @@ vulnerabilities.
 - Confirm tenant and data-sensitivity assumptions.
 - Confirm severity examples and any exclusions.
 - Establish the private security contact.
-- Verify GitHub private reporting and the resolved policy chain after remote creation.
+- Re-verify private reporting and the resolved policy chain at each supported release.

@@ -1,71 +1,37 @@
-# Foundation Roadmap
+# Three-Stage Roadmap
 
-**Status:** Active; gates are outcomes, not calendar promises
+**Status:** Active; stages are evidence gates, not calendar promises
 
-## F0 — Foundation
+## Stage 1 — Evidence and technical proof
 
-- project naming and preliminary clearance;
-- research plan, Pro prompt, independent baseline, claim ledger;
-- evidence-gated PRD and requirements;
-- architecture, streaming, reliability, security, benchmark, and conformance contracts;
-- local Git history and GitHub Flow decision.
+- maintain a truthful open-source foundation, research archive, claim ledger, and requirements;
+- validate market pain and a specific adoption wedge through interviews and primary evidence;
+- build versioned conformance fixtures and a bounded fake HTTP provider;
+- select the network stack through equivalent Hyper/Tokio and Pingora correctness spikes;
+- prove streaming, cancellation, backpressure, recovery-budget, security, and resource contracts.
 
-**Exit:** documentation is internally consistent and external research can be compared.
+**Current state (2026-08-14):** repository governance and the network-neutral stream/retry domain
+core exist. HTTP behavior, market demand, compatibility, and performance remain unproven.
 
-## F1 — Market and wedge validation
+**Exit:** R0 through R3 have named evidence. Otherwise narrow, pivot, contribute upstream, or stop.
 
-- run Pro research and resolve claims;
-- 15+ interviews across selected segments;
-- incumbent adoption/rejection studies;
-- three design-partner candidates;
-- select, narrow, or reject primary wedge.
+## Stage 2 — Narrow public alpha
 
-**Exit:** R0 and R1 pass. Otherwise pivot/contribute/stop.
+- one bounded OpenAI-compatible ingress subset and one compatible upstream;
+- single-binary evaluation path without a mandatory database, broker, or hosted control plane;
+- strict configuration, secrets, auth, policy, limits, deadlines, telemetry, and reload behavior;
+- public compatibility/deviation matrix and reproducible benchmark data;
+- checksums, SBOM, provenance, vulnerability intake, operations, and upgrade documentation.
 
-## F2 — Technical proof
+**Exit:** an independent evaluator completes the synthetic streaming journey and the alpha passes
+its named trust/technical profile. No universal compatibility or enterprise-readiness claim.
 
-- network-stack comparison;
-- canonical request/event model;
-- fake-provider and conformance harness;
-- streaming/cancellation/backpressure state machine;
-- auth, secure config, metadata-only telemetry;
-- reproducible equivalent-control benchmarks;
-- targeted fuzz/fault tests.
+## Stage 3 — Validated adoption and hardening
 
-**Current slice (2026-08-14):** the network-neutral stream/retry domain core and deterministic
-scenario testkit are implemented. HTTP behavior, real cancellation/backpressure, configuration,
-provider conformance, and performance remain unproven.
+- three design partners use the same primary workflow;
+- pilot-driven workload identity, tenant policy, quotas, HA/drain, rollback, and deployment assets;
+- incident, upgrade, security-response, conformance, and performance regression programs;
+- multi-maintainer continuity and explicit open-source/commercial support boundaries.
 
-**Exit:** R2 and R3 pass.
-
-## F3 — Minimum credible open-source release
-
-- narrow supported compatibility matrix;
-- single-binary/container evaluation path;
-- signed checksums/artifacts, SBOM and provenance;
-- active root license and security policy;
-- CI, branch protection, issue/discussion/security channels;
-- migration, operations, failure, and upgrade documentation.
-
-**Exit:** public alpha; no enterprise-grade claim.
-
-## F4 — Design-partner pilot
-
-- three teams run the same primary use case;
-- operational and privacy evidence;
-- incident/upgrade drills;
-- SLOs and support boundaries;
-- close critical/high findings.
-
-**Exit:** R4 and pilot exit criteria pass.
-
-## F5 — Enterprise candidate
-
-- workload/OIDC identity as validated;
-- tenant policy and quota semantics;
-- HA/drain/rollback and deployment evidence;
-- release/security response maturity;
-- performance and conformance regression program;
-- commercial/support model only after OSS trust boundary is clear.
-
-**Exit:** explicit evidence permits enterprise-ready claim for named deployment profiles.
+**Exit:** evidence supports a clearly scoped production/enterprise candidate. Expansion such as
+MCP/A2A, semantic caching, content guardrails, UI, or a hosted control plane needs a separate PRD.

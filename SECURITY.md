@@ -5,13 +5,14 @@ security boundary yet.
 
 ## Supported versions
 
-There are no supported production releases. Security fixes currently target the `main` branch.
+There are no supported production releases. Security fixes enter through reviewed topic branches
+targeting `development`, then follow the documented promotion path.
 
 ## Reporting a vulnerability
 
-Do not open a public issue for a suspected vulnerability. Use GitHub private vulnerability
-reporting once the repository is public. Until that channel exists, contact the repository owner
-privately and include:
+Do not open a public issue for a suspected vulnerability. Use
+[GitHub private vulnerability reporting](https://github.com/Hafiz-Ahmed-Zia/hafiz-rust-gateway/security/advisories/new)
+and include:
 
 - affected revision;
 - minimal reproduction without real credentials or customer data;
